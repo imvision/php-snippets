@@ -42,11 +42,6 @@ class Uri
         // Get all the values of an array
         $uri = array_values($request_uri);
 
-        // Ability to pass parameters
-        foreach ($uri as $i => $u) {
-            if (isset($uri[$i])) { $pos = strrpos($uri[$i], "?"); if ($pos === false) { $uri[$i] = Security::sanitizeURL($uri[$i]); } else { $uri[$i] = Security::sanitizeURL(substr($uri[$i], 0, $pos)); } }
-        }
-
         // Return uri segments
         return $uri;
     }
